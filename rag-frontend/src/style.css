@@ -1,0 +1,374 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   基础样式
+   ============================================ */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* 自定义CSS变量 */
+  --color-primary: #3b82f6;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #06b6d4;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ============================================
+   组件类
+   ============================================ */
+@layer components {
+  /* 按钮基础样式 */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500
+           shadow-sm hover:shadow-md active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500
+           active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-success-600 text-white hover:bg-success-700 focus:ring-success-500
+           shadow-sm hover:shadow-md active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-danger-600 text-white hover:bg-danger-700 focus:ring-danger-500
+           shadow-sm hover:shadow-md active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply text-gray-700 hover:bg-gray-100 focus:ring-gray-500 active:scale-95;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200
+           transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .card-padding {
+    @apply p-6;
+  }
+
+  /* 输入框样式 */
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed;
+  }
+
+  .input-error {
+    @apply border-danger-500 focus:ring-danger-500;
+  }
+
+  /* 徽章样式 */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800;
+  }
+
+  .badge-success {
+    @apply bg-success-100 text-success-800;
+  }
+
+  .badge-warning {
+    @apply bg-warning-100 text-warning-800;
+  }
+
+  .badge-danger {
+    @apply bg-danger-100 text-danger-800;
+  }
+
+  .badge-info {
+    @apply bg-info-100 text-info-800;
+  }
+
+  /* 消息气泡样式 - 类纸化风格 */
+  .message-bubble {
+    @apply rounded-2xl px-4 py-2.5 max-w-xs lg:max-w-md
+           transition-all duration-200;
+  }
+
+  .message-bubble-user {
+    @apply bg-gray-900 text-white shadow-sm;
+  }
+
+  .message-bubble-assistant {
+    @apply bg-white border border-gray-100 text-gray-800 shadow-sm;
+  }
+}
+
+/* ============================================
+   实用工具类
+   ============================================ */
+@layer utilities {
+  /* 文本省略 */
+  .text-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text-ellipsis-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Glassmorphism 效果 */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* 渐变文本 */
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  }
+
+  /* 动画延迟工具类 */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+/* ============================================
+   过渡动画
+   ============================================ */
+/* Vue路由过渡 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+/* 模态框过渡 */
+.modal-enter-active,
+.modal-leave-active {
+  transition: all 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ============================================
+   Mermaid图表样式
+   ============================================ */
+.mermaid-container {
+  @apply w-full flex items-center justify-center;
+}
+
+.mermaid-container pre.mermaid {
+  @apply bg-transparent w-full;
+  text-align: center;
+}
+
+/* Mermaid SVG样式优化 */
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* 防止动画时的布局偏移 */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 节点高亮动画 - 只对形状元素应用颜色和描边 */
+.mermaid svg .node-active rect,
+.mermaid svg .node-active circle,
+.mermaid svg .node-active polygon,
+.mermaid svg .node-active path,
+.mermaid svg .node-active ellipse {
+  fill: #3b82f6 !important;
+  stroke: #1d4ed8 !important;
+  stroke-width: 3px !important;
+  /* 使用阴影闪烁动画代替transform,避免错位 */
+  animation: glow-pulse 1.5s ease-in-out infinite;
+}
+
+/* 节点组不应用任何transform动画 */
+.mermaid svg g.node-active {
+  /* 不使用transform动画,避免错位问题 */
+}
+
+.mermaid svg .node-active text {
+  fill: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* 已完成节点样式 - 对所有形状元素应用 */
+.mermaid svg .node-completed rect,
+.mermaid svg .node-completed circle,
+.mermaid svg .node-completed polygon,
+.mermaid svg .node-completed path,
+.mermaid svg .node-completed ellipse {
+  fill: #10b981 !important;
+  stroke: #059669 !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid svg .node-completed text {
+  fill: #ffffff !important;
+}
+
+/* 节点发光脉冲动画 - 不使用transform,避免错位 */
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.9));
+  }
+}
+
+/* ============================================
+   登录页面动画
+   ============================================ */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ============================================
+   响应式辅助
+   ============================================ */
+@media (max-width: 768px) {
+  .card-padding {
+    @apply p-4;
+  }
+
+  .btn {
+    @apply text-sm;
+  }
+}

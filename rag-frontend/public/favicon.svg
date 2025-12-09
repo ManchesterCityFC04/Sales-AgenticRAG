@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景圆形 -->
+  <circle cx="32" cy="32" r="30" fill="url(#grad1)" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- 大脑图标 -->
+  <path d="M20 28c-2 0-4 2-4 4s2 4 4 4c1 0 2-0.5 2.5-1.2C23.8 36.2 25.8 37 28 37c3.3 0 6-2.7 6-6s-2.7-6-6-6c-2.2 0-4.2 0.8-5.5 2.2C22 26.5 21 26 20 28z" fill="#ffffff" opacity="0.9"/>
+  <path d="M44 28c2 0 4 2 4 4s-2 4-4 4c-1 0-2-0.5-2.5-1.2C40.2 36.2 38.2 37 36 37c-3.3 0-6-2.7-6-6s2.7-6 6-6c2.2 0 4.2 0.8 5.5 2.2C42 26.5 43 26 44 28z" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- 连接线表示神经网络 -->
+  <line x1="24" y1="30" x2="40" y2="30" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+  <line x1="28" y1="26" x2="36" y2="34" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+  <line x1="28" y1="34" x2="36" y2="26" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- 知识点 -->
+  <circle cx="24" cy="22" r="2" fill="url(#grad2)" opacity="0.8"/>
+  <circle cx="40" cy="22" r="2" fill="url(#grad2)" opacity="0.8"/>
+  <circle cx="24" cy="38" r="2" fill="url(#grad2)" opacity="0.8"/>
+  <circle cx="40" cy="38" r="2" fill="url(#grad2)" opacity="0.8"/>
+  <circle cx="32" cy="18" r="2" fill="url(#grad2)" opacity="0.8"/>
+  <circle cx="32" cy="42" r="2" fill="url(#grad2)" opacity="0.8"/>
+  
+  <!-- 问答符号 -->
+  <text x="32" y="50" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#ffffff" opacity="0.9">AI</text>
+</svg>

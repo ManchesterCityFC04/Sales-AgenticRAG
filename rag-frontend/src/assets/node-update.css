@@ -1,0 +1,80 @@
+/* 节点更新消息的可折叠样式 - 类纸化风格 */
+.node-update-details {
+  @apply rounded-lg overflow-hidden transition-all duration-300;
+  margin: 0.5rem 0;
+  background: #fefdfb;
+  border: 1px solid #e7e5e4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.node-update-details:hover {
+  background: #faf9f7;
+  border-color: #d6d3d1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.node-update-details[open] {
+  background: #fefdfb;
+  border-color: #d6d3d1;
+}
+
+.node-update-summary {
+  @apply relative flex flex-row items-center w-full cursor-pointer list-none py-2.5 px-4 space-x-2.5 transition-all duration-200;
+  background: transparent;
+}
+
+.node-update-summary:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.node-update-summary::-webkit-details-marker {
+  display: none;
+}
+
+.node-update-caret {
+  @apply flex-shrink-0 w-4 h-4 flex items-center justify-center;
+}
+
+.node-update-caret svg {
+  @apply w-3.5 h-3.5 transition-transform duration-200 ease-out;
+  color: #78716c;
+  stroke-width: 2;
+}
+
+.node-update-details[open] .node-update-caret svg {
+  @apply rotate-90;
+}
+
+.node-update-title {
+  @apply flex-1 leading-snug text-left;
+}
+
+.node-update-title p {
+  @apply m-0 font-normal text-gray-700 text-sm;
+}
+
+.node-update-content {
+  @apply px-4 pb-3 pt-1 text-sm text-gray-600;
+  background: transparent;
+  padding-left: 2.25rem; /* 对齐标题文字 */
+}
+
+.node-update-content-text {
+  @apply whitespace-pre-wrap leading-relaxed font-light;
+}
+
+/* 添加动画效果 */
+.node-update-details {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
