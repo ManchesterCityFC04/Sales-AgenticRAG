@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# 虚拟环境（Windows 创建的不兼容 Linux）
+**/.venv/
+**/venv/
+
+# 环境变量（可选，根据需要调整）
+# .env
+
+# 日志文件
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Git
+.git/
+.gitignore
+
+# 文档
+CLAUDE.md
+README.md
+
+# 测试
+**/tests/
+
+# RAG 临时数据
+**/rag/outputs/
+
+# 前端项目
+rag-frontend/
+
+# 压缩包
+*.rar
+*.zip
+*.tar.gz
+
+# LangGraph API
+.langgraph_api/
