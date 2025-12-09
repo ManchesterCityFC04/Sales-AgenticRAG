@@ -1,4 +1,4 @@
-# Sales-AgenticRAG - 智能销售助手系统
+#                        Sales-AgenticRAG - 智能销售助手系统
 
 <div align="center">
 
@@ -468,4 +468,5 @@ uv run pytest backend/tests/ -v
 Made with ❤️ by Sales-AgenticRAG Team
 
 </div>
+
 
